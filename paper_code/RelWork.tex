@@ -1,0 +1,82 @@
+\chapter{Related Work}\label{cap:relwork}
+Before presenting the proposed system, the thesis must be placed in the context of existing work on EEG-based monitoring and neurofeedback in education. The studies reviewed in this chapter show both the potential of portable EEG devices and the practical difficulties that appear when such systems are moved outside controlled laboratory conditions. Particular attention is given to multi-user acquisition, cognitive engagement metrics, and simplified attention measures, because these aspects directly influence the design choices made later in the project.
+
+
+
+\section{Literature Review}\label{sect:litrev}
+Recent studies have shown that EEG monitoring can support educational research by offering objective measures related to attention and cognitive load. Portable and more affordable EEG devices have been applied in studies involving reading, arithmetic tasks, and relaxation exercises \cite{Emri2023}. These results suggest that EEG activity, especially in the alpha, beta, and theta bands, can reflect changes in attention and cognitive effort, making it useful for studying learning dynamics in more practical environments.
+
+
+Multi-user EEG systems have also been proposed for capturing synchronized attention data from several students at the same time \cite{Apicella2022}. By combining wireless headsets with real-time data streaming, these systems make it possible to visualize class-level engagement and identify trends across different segments of instruction. At the same time, they show why signal processing, artifact handling, and synchronization are important when EEG measurements are used in educational settings \cite{Marzbani2016}.
+
+
+Other research has examined whether EEG data can be collected from multiple participants in realistic classroom environments. Poulsen et al. demonstrated that synchronized neural recordings can be obtained from groups of students using portable EEG devices during shared learning activities \cite{Poulsen2017}. Their work highlights the challenges caused by differences between users and by environmental noise, but it also supports the feasibility of classroom-scale EEG monitoring.
+
+
+Simplified EEG setups form another relevant research direction. Studies based on single-channel EEG have shown that attention-related features can still be extracted even when the hardware configuration is minimal \cite{Liang2022}. Although such systems provide less spatial information and are more sensitive to artifacts, they offer advantages in cost, usability, and scalability. These qualities make them relevant for educational environments, where complex laboratory setups are rarely practical.
+
+
+Broader analyses of portable EEG technologies in education emphasize both the opportunities and the limitations of these systems. Reviews in this area point out that portable devices enable more flexible and accessible experimentation, but issues such as signal quality, lack of standardization, and interpretation of cognitive metrics remain open challenges \cite{Xu2018}.
+
+
+Taken together, these works provide the foundation for the system presented in this thesis. They support the use of portable EEG in educational contexts, while also showing why a classroom prototype must prioritize practical deployment, readable visualization, and careful interpretation of engagement indicators.
+
+\section{Cognitive Engagement Metrics}\label{sect:cognmet}
+Cognitive engagement is not a directly observable variable, which makes its measurement difficult in educational systems. In the literature, it is usually inferred from signals that are associated with attention, mental effort, task involvement, or sustained processing. EEG is useful in this context because it captures neural activity continuously and with high temporal resolution, allowing changes in engagement to be followed during a task rather than only after it has ended \cite{Wolpaw2012}.
+
+
+Many EEG-based engagement metrics rely on spectral information. Classical EEG research describes several frequency bands that are relevant for cognitive interpretation, including theta, alpha, and beta activity \cite{Niedermeyer2005}. These bands are not simple labels for attention, but they provide a useful starting point. In general terms, theta activity is often discussed in relation to cognitive control and task demand, alpha activity is frequently associated with relaxation or reduced cortical activation, and beta activity is often linked with active processing and alertness. Because these relationships depend on context, band power should be interpreted carefully rather than as a direct measurement of learning.
+
+
+A well-known engagement formulation is the beta-to-alpha-theta ratio. Pope et al. evaluated several EEG indices in a biocybernetic system and found that the ratio between beta power and the sum of alpha and theta power was the most suitable candidate among the tested engagement indices \cite{Pope1995}. Later work also connected EEG-derived engagement and workload measures with task performance, vigilance, memory, and mental effort, showing that such indicators can follow changes in cognitive state over time \cite{Berka2007}.
+
+
+For classroom applications, however, the usefulness of a metric depends not only on its theoretical relevance, but also on its practical stability. Liang et al. compared attention-related features in single-channel EEG systems and showed that simplified setups can still provide useful information for attention monitoring \cite{Liang2022}. This is important for educational prototypes, because classroom systems must balance signal quality with comfort, cost, and ease of deployment.
+
+
+The metric used in this thesis follows this practical direction. It uses a simple spectral ratio because the goal is to provide a transparent engagement indicator, not to build a clinical diagnostic model. This choice is consistent with the related work: EEG engagement indices can be informative, but they should be treated as approximate indicators that require context and human interpretation.
+
+\section{Neurofeedback in Education}\label{sect:neurfbedu}
+Neurofeedback systems use physiological measurements to provide feedback about cognitive or affective states. In a strict clinical sense, neurofeedback often involves training users to regulate their own brain activity. In educational technology, the term is sometimes used more broadly, referring to systems that monitor neural or physiological signals and use them to support learning, adaptation, or reflection.
+
+
+Marzbani et al. describe neurofeedback systems as pipelines that include signal acquisition, preprocessing, feature extraction, feedback generation, and evaluation \cite{Marzbani2016}. This general structure is relevant for classroom prototypes as well, even when the feedback is directed mainly to the teacher rather than directly to the student. The same basic problem remains: noisy physiological data must be transformed into information that can be understood and used in a meaningful way.
+
+
+In educational settings, EEG-based feedback has been explored as a way to make engagement less dependent on self-report or manual observation. Apicella et al. developed an EEG-based measurement system for monitoring student engagement in Learning 4.0, showing how wearable acquisition and real-time visualization can be combined to support classroom awareness \cite{Apicella2022}. Their work is especially relevant because it treats engagement monitoring as part of a teaching environment rather than as an isolated laboratory task.
+
+
+Neurofeedback also connects to a wider research direction in adaptive learning systems. Intelligent tutoring systems such as AutoTutor use information about cognitive and affective states to adapt interaction and support learning \cite{DMello2013}. Although these systems do not necessarily rely on EEG, they illustrate the broader educational motivation: learning environments become more useful when they can respond to the learner's current state instead of applying the same strategy throughout the whole session.
+
+
+Recent reviews of wearables for engagement detection show that physiological monitoring in learning environments is not limited to EEG. Heart rate, skin temperature, electrodermal activity, eye tracking, posture, and other signals have also been used to estimate engagement or emotion \cite{BustosLopez2022}. This broader context is useful because it shows that EEG should not be treated as the only possible source of engagement information. For this thesis, EEG was selected because it is directly related to neural activity and can be streamed in real time, but a future system could combine it with additional signals.
+
+\section{Limitations of Current Approaches}\label{sect:limcurrapp}
+Despite the promise of EEG-based engagement monitoring, several limitations appear consistently in the literature. The first is signal quality. Portable EEG devices are easier to use than laboratory equipment, but they normally have fewer channels, weaker spatial information, and greater sensitivity to movement and electrode contact problems \cite{Xu2018}. These limitations become more visible in classrooms, where students naturally move, talk, and interact with their environment.
+
+
+Multi-user acquisition introduces additional difficulties. Poulsen et al. showed that synchronized EEG recordings can be collected from groups of students during classroom-like activities, but their work also highlights variability between participants and the need for robust processing \cite{Poulsen2017}. In practice, a classroom system must handle imperfect headset placement, different levels of movement, and streams that may start or stop at different times.
+
+
+Another limitation concerns interpretation. Engagement is a complex construct with cognitive, behavioral, and affective components. A single EEG value cannot fully represent whether a student understands the lesson, is motivated, is confused, or is simply physically still. Reviews of wearable engagement detection emphasize this diversity of signals and meanings, showing that engagement monitoring is useful but not straightforward \cite{BustosLopez2022}.
+
+
+There is also a methodological risk in over-automating interpretation. If EEG-derived values are presented as exact measures, teachers may be encouraged to rank students or draw conclusions that the signal cannot support. For this reason, related work supports a cautious approach: engagement indicators can provide additional information, but they should be combined with pedagogical judgement, lesson context, and awareness of signal limitations \cite{Xu2018,Liang2022}.
+
+
+These limitations directly influence the system proposed in this thesis. The prototype does not attempt to diagnose attention or evaluate students automatically. Instead, it presents engagement as a contextual indicator, keeps technical inspection available, and supports post-lesson reflection. This makes the system more realistic for a master's-level prototype and more appropriate for educational use.
+
+\section{Attention Measurement Techniques}\label{sect:attmeasteq}
+Attention can be measured through several techniques, each with different strengths and weaknesses. Traditional educational methods include observation, questionnaires, and performance analysis. These methods are easy to apply, but they are often retrospective or subjective. Physiological methods, including EEG, add continuous measurement, but they require careful acquisition and interpretation.
+
+
+Within EEG-based approaches, one common technique is band-power analysis. The signal is divided into frequency bands, and changes in power are used as features for estimating cognitive state \cite{Niedermeyer2005}. This method is relatively simple and computationally efficient, which makes it suitable for real-time prototypes. The engagement ratio used by Pope et al. is an example of this type of technique, because it combines beta, alpha, and theta power into a single index \cite{Pope1995}.
+
+
+Another technique is feature comparison or fusion. Liang et al. evaluated attention-related features in single-channel EEG systems and proposed feature fusion to improve attention monitoring \cite{Liang2022}. This direction is useful when the system has limited hardware but still needs a more reliable estimate than a single raw feature can provide. Such methods can improve performance, but they also add complexity and may require more validation data than is available in a small prototype.
+
+
+Multi-user classroom research has also used inter-subject correlation. Dmochowski et al. showed that temporal reliability of neural responses to naturalistic stimuli can predict audience preferences, and Poulsen et al. later applied related ideas to synchronized EEG recordings in a classroom setting \cite{Dmochowski2014,Poulsen2017}. This technique is powerful for group-level analysis, especially when students are exposed to the same stimulus, but it is less direct for displaying an individual live engagement value for each student.
+
+
+The attention measurement technique adopted in this thesis is therefore deliberately simple. It uses spectral information to compute an engagement indicator that can be updated in real time and explained clearly. This does not make it the most advanced possible technique, but it matches the goals of the prototype: real-time operation, multi-user support, readable visualization, and cautious interpretation.

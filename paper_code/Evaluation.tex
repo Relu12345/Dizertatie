@@ -1,0 +1,44 @@
+\chapter{Evaluation and Results}\label{cap:evalnress}
+\section{Experimental Setup}\label{sect:expset}
+The current evaluation phase focused on checking the functionality and stability of the proposed classroom neurofeedback system. Since large-scale classroom testing is still ongoing, the current results are preliminary and mainly intended to confirm that the acquisition, processing, and visualization pipeline works correctly.
+
+Testing was performed using Unicorn EEG headsets connected to Raspberry Pi acquisition nodes through the Lab Streaming Layer protocol over a shared local network. The teacher workstation executed the Streamlit-based dashboard used for stream discovery, engagement visualization, and lesson management.
+
+The evaluation workflow included stream initialization, continuous EEG acquisition, real-time engagement estimation, and dashboard monitoring during simulated classroom sessions.
+
+\section{Performance Assessment}\label{sect:perfasses}
+During validation, the system was tested for continuous stream reception, dashboard responsiveness, and real-time engagement visualization.
+
+Figure~\ref{fig:raw_eeg_time} shows an example of the raw EEG inspection interface used during testing. The horizontal axis represents relative time, while the vertical axis shows the selected raw Fz values received from the stream.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.92\textwidth]{\detokenize{En/7. Raw EEG and time_sec.png}}
+\caption{Raw EEG inspection chart showing recent Fz values over relative time for a selected stream.}
+\label{fig:raw_eeg_time}
+\end{figure}
+
+Initial testing showed that the prototype can maintain multiple simultaneous streams while continuously updating the dashboard without major interruptions. The processing pipeline remained responsive enough for near real-time classroom monitoring.
+
+Although detailed quantitative evaluation has not yet been completed, the current results suggest that the architecture is stable enough for continued testing and future classroom experiments.
+
+\section{User Feedback}\label{sect:usrfb}
+Formal feedback from a full classroom participant group is not yet available because testing is still ongoing. However, early observations during demonstration sessions showed that the teacher interface is relatively easy to understand and use.
+
+The integration of stream monitoring, engagement visualization, and lesson management into a single interface was useful for observing classroom activity in real time. Presenting engagement values as supportive indicators instead of strict performance measurements also fits better with the educational purpose of the system.
+
+Some limitations were also noticed during testing, especially the sensitivity of EEG acquisition to movement artifacts and headset positioning.
+
+\section{Educational Impact}\label{sect:eduimp}
+Although long-term classroom studies are still in progress, the prototype shows that neurofeedback technologies can be integrated into educational environments using accessible hardware and software components.
+
+The system may support reflective teaching practices by allowing teachers to observe approximate engagement trends during different lesson segments. The engagement values are not intended to replace pedagogical judgement, but rather to provide additional information that may help during lesson analysis.
+
+At the current stage, these observations should be considered preliminary until larger experimental studies are completed.
+
+\section{Conclusion}\label{sect:conc}
+This research presented a preliminary evaluation of the proposed classroom neurofeedback system. Current testing confirms that the prototype is capable of continuous EEG acquisition, real-time stream visualization, and engagement estimation within a unified architecture.
+
+Although full classroom validation is still ongoing, the results obtained so far indicate that the system provides a solid foundation for future experimental studies in real educational environments.
+
+Future work will focus on larger participant groups, quantitative evaluation, improved preprocessing techniques, and broader educational validation.

@@ -1,0 +1,6 @@
+pylsl
+matplotlib
+numpy
+streamlit
+pandas
+pymupdf
