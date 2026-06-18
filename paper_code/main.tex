@@ -1,0 +1,212 @@
+\documentclass[12pt,a4paper,openany]{book}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage{amsmath,amsthm,amssymb,graphicx,hyperref}
+\usepackage[left=1.2in,right=1.2in,top=1in,bottom=1in]{geometry}
+%\usepackage[romanian]{babel}
+\usepackage[english]{babel}
+\usepackage[table]{xcolor}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{caption}
+\definecolor{captiongray}{gray}{0.35}
+\DeclareCaptionFont{captiongray}{\color{captiongray}}
+\captionsetup{
+    font={small,captiongray},
+    labelfont={bf,captiongray},
+    justification=centering,
+    singlelinecheck=true
+}
+\usepackage{paralist}
+\RequirePackage{hyphenat}
+\usepackage{algorithmic, algorithm}
+\usepackage[inline]{enumitem}
+\usepackage{float}
+%\usepackage{...insert other packages here...}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}[section]
+\newtheorem{exmp}{Example}[section]
+\begin{document}
+\sloppy
+
+\thispagestyle{empty}
+\begin{center}
+\begin{figure}[h!]
+\vspace{-20pt}
+\begin{center}
+\includegraphics[width=100pt]{En/INFO_Asset-1.png}
+\end{center}
+\end{figure}
+
+
+{\large{\bf WEST UNIVERSITY OF TIMI\c SOARA
+
+FACULTY OF COMPUTER SCIENCE
+
+INTELLIGENT SOFTWARE ROBOTICS}}
+
+\vspace{120pt}
+{\huge {\bf MASTER THESIS}}
+
+\vspace{160pt}
+\end{center}
+
+{\large\noindent{\bf SUPERVISOR:
+\hspace{172pt} GRADUATE: }
+
+\noindent Lect. Dr. Alin Brîndușescu \hfill 
+\noindent  Aurel-Ionuț Coruian
+}
+
+\vfill
+\begin{center}
+{\bf TIMI\c SOARA
+
+2026}
+\end{center}
+\newpage
+\thispagestyle{empty}
+\begin{center}
+{\large{\bf WEST UNIVERSITY OF TIMI\c SOARA
+		
+FACULTY OF COMPUTER SCIENCE
+		
+INTELLIGENT SOFTWARE ROBOTICS}}
+
+\vspace{200pt}
+{\huge {\bf Implementation of a Real-Time Multi-User Neurofeedback System for Classroom Engagement Monitoring }}
+
+\vspace{153pt}
+\end{center}
+
+{\large\noindent{\bf SUPERVISOR:\hfill GRADUATE:}
+
+\noindent Lect. Dr. Alin Brîndușescu \hfill 
+\noindent  Aurel-Ionuț Coruian
+}
+
+\vfill
+\begin{center}
+{\bf TIMI\c SOARA
+
+2026}
+\end{center}
+
+\newpage
+\normalsize{}
+
+\input{Abstract}
+\let\cleardoublepage\clearpage
+
+\input{Statement}
+\let\cleardoublepage\clearpage
+
+\tableofcontents
+\let\cleardoublepage\clearpage
+
+\input{Introduction}
+\input{RelWork}
+\input{SysDesign}
+\input{ImplProcPipe}
+\input{Evaluation}
+\input{ConclusionFutureWork}
+
+\bibliography{En/mybib}
+\bibliographystyle{alpha}
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\appendix
+\chapter{Appendix - Generative AI Tools Usage}
+\label{genAIUsage}
+
+An overview how  generative AI Tools are used in this thesis is presented in Table \ref{tab:genAIOverview}, and the full details of each usage are given below.
+
+\renewcommand{\arraystretch}{1.3}
+
+\rowcolors{2}{gray!15}{white}
+\begin{table}[h!]
+    \centering
+    \begin{tabularx}{\textwidth}{|
+        >{\centering\arraybackslash}m{2.8cm}|
+        X|X|X|}
+        \hline
+        \rowcolor{blue!20}
+        AI Tool & Use case & Used in & Remarks \\
+        \hline
+
+        \multirow[t]{3}{=}{\centering ChatGPT 5.5}
+        & Drafting parts of the written text
+        & Sections \ref{sect:bciov}, \ref{sect:limcurrapp},
+        \ref{ssect:lsl}, \ref{ssect:pyvizmod}
+        & Details below \\
+        \cline{2-4}
+
+        & Generation of UML diagrams as PlantUML source code
+        & Chapter \ref{cap:sysdes} (figures)
+        & Rendered with \url{https://www.planttext.com/} \\
+        \cline{2-4}
+
+        & Generation and debugging of application code
+        & Application code (\texttt{README.md} and most of the user interface)
+        & Details below \\
+        \hline
+    \end{tabularx}
+
+    \caption{Overview of generative AI usage}
+    \label{tab:genAIOverview}
+\end{table}
+
+ChatGPT 5.5 was the only generative AI tool used in this thesis. It was used for the three purposes summarized in Table \ref{tab:genAIOverview}. For each of them the purpose of use, the method, the way the output was verified, and the way the output was implemented are described below, together with representative prompts that were given to the model.
+
+\subsection*{Drafting parts of the written text}
+\begin{enumerate}
+    \item \textbf{Purpose of use:} to help draft and rephrase parts of selected sections, namely Section \ref{sect:bciov} (Brain--Computer Interfaces Overview), Section \ref{sect:limcurrapp} (Limitations of Current Approaches), Section \ref{ssect:lsl} (Lab Streaming Layer Integration), and Section \ref{ssect:pyvizmod} (Python Visualization Module).
+    \item \textbf{Method:} the model was given the topic, the surrounding context, and the points that each passage had to cover, and was asked to produce draft paragraphs that I then revised.
+    \item \textbf{Verification of the output:} all generated text was read critically, checked for technical accuracy against the actual system and the cited literature, and corrected where needed. Any factual claim was confirmed before being kept.
+    \item \textbf{Implementation:} the generated drafts were edited and rewritten to match the style and content of the rest of the thesis. The final wording of these sections is my own and reflects the work actually carried out.
+\end{enumerate}
+
+\noindent Representative prompts used for this purpose, where my own text was given to the model to be reworded:
+\begin{itemize}
+    \item ``This is my draft of the Brain--Computer Interfaces overview. Keep the meaning and the references, but make the wording clearer and more consistent with the rest of the thesis.''
+    \item ``Rephrase the following paragraphs about the Lab Streaming Layer integration so they read more smoothly, without adding any new claims.''
+    \item ``Tighten my text on the Python visualization module and improve its flow; keep it technical but easier to follow.''
+\end{itemize}
+
+\subsection*{Generation of UML diagrams}
+\begin{enumerate}
+    \item \textbf{Purpose of use:} to obtain the UML diagrams used in the thesis (Chapter \ref{cap:sysdes}).
+    \item \textbf{Method:} the model was given a description of the architecture and components and was asked to produce the corresponding diagrams as PlantUML source code.
+    \item \textbf{Verification of the output:} the generated PlantUML code was reviewed for correctness against the real system design and adjusted where it did not match the implemented architecture.
+    \item \textbf{Implementation:} the reviewed PlantUML code was rendered into the diagram images using \url{https://www.planttext.com/}, and the resulting figures were included in the thesis.
+\end{enumerate}
+
+\noindent Representative prompts used for this purpose:
+\begin{itemize}
+    \item ``From this description of the hardware setup --- each student has a Unicorn headset and a Raspberry Pi node that streams over LSL to the teacher workstation --- generate PlantUML source for a deployment diagram.''
+    \item ``Here is how the teacher application is organised into pages, live acquisition logic, lesson and report services, administration, and reusable UI components. Produce PlantUML for the corresponding component diagram.''
+\end{itemize}
+
+\subsection*{Generation and debugging of application code}
+\begin{enumerate}
+    \item \textbf{Purpose of use:} to assist with parts of the application code, in particular writing the project \texttt{README.md} and most of the user interface, as well as to help with debugging.
+    \item \textbf{Method:} the model was asked to generate UI code and documentation from a description of the desired behaviour, and was given error messages and faulty code snippets to help diagnose problems during development.
+    \item \textbf{Verification of the output:} all generated code was reviewed and tested by running the application, and was kept only when it behaved correctly. Suggested fixes were checked before being applied.
+    \item \textbf{Implementation:} the verified code was integrated into the application, adapted where necessary to fit the existing code base. The functional logic of the system remains my own work.
+\end{enumerate}
+
+\noindent Representative prompts used for debugging and code-related tasks:
+\begin{itemize}
+    \item ``The teacher application sometimes fails to discover an LSL stream that a Raspberry Pi is clearly publishing. Given this collector code, help me find why the inlet is never opened.''
+    \item ``Loading the Unicorn Pi Zero W native library through the Python C bindings fails with this error. Help me correct the function signatures and the library path.''
+    \item ``Streamlit reruns the whole page on every interaction and my acquisition loop keeps restarting. How can I keep the background collector alive across reruns and only read snapshots from the interface?''
+    \item ``The engagement value occasionally comes out as NaN. Here is the band-power and the ratio code --- make it robust to empty or constant analysis windows.''
+    \item ``Converting uploaded PowerPoint files to PDF previews with LibreOffice fails on some files, and speaker-note extraction returns empty strings. Help me debug the conversion and the note extraction.''
+    \item ``The per-slide report sometimes assigns engagement samples to the wrong slide. Given the slide-visit timing and the interval-matching function, help me fix how samples are grouped per slide.''
+    \item ``In the report bar chart the slides are ordered as text (Slide 1, Slide 10, Slide 2, and so on) instead of numerically. Help me enforce a correct numeric ordering of the slides.''
+\end{itemize}
+
+\end{document}

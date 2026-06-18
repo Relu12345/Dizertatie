@@ -1,0 +1,91 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{BLCRGH{\etalchar{+}}22}
+
+\bibitem[AAF{\etalchar{+}}22]{Apicella2022}
+A.~Apicella, P.~Arpaia, M.~Frosolone, G.~Improta, N.~Moccaldi, and
+  A.~Pollastro.
+\newblock Eeg-based measurement system for monitoring student engagement in
+  learning 4.0.
+\newblock {\em Scientific Reports}, 12(1):5857, 2022.
+
+\bibitem[BLCRGH{\etalchar{+}}22]{BustosLopez2022}
+M.~Bustos-Lopez, N.~Cruz-Ramirez, A.~Guerra-Hernandez, L.~N. Sanchez-Morales,
+  N.~A. Cruz-Ramos, and G.~Alor-Hernandez.
+\newblock Wearables for engagement detection in learning environments: A
+  review.
+\newblock {\em Biosensors}, 12(7):509, 2022.
+
+\bibitem[BLL{\etalchar{+}}07]{Berka2007}
+C.~Berka, D.~J. Levendowski, M.~N. Lumicao, A.~Yau, G.~Davis, V.~T. Zivkovic,
+  R.~E. Olmstead, P.~D. Tremoulet, and P.~L. Craven.
+\newblock Eeg correlates of task engagement and mental workload in vigilance,
+  learning, and memory tasks.
+\newblock {\em Aviation, Space, and Environmental Medicine}, 78(5
+  Suppl):B231--B244, 2007.
+
+\bibitem[DBA{\etalchar{+}}14]{Dmochowski2014}
+J.~P. Dmochowski, M.~A. Bezdek, B.~P. Abelson, J.~S. Johnson, E.~H. Schumacher,
+  and L.~C. Parra.
+\newblock Audience preferences are predicted by temporal reliability of neural
+  processing.
+\newblock {\em Nature Communications}, 5:4567, 2014.
+
+\bibitem[DG13]{DMello2013}
+S.~K. D'Mello and A.~C. Graesser.
+\newblock Autotutor and affective autotutor: Learning by talking with
+  cognitively and emotionally intelligent computers that talk back.
+\newblock {\em ACM Transactions on Interactive Intelligent Systems}, 2(4):23,
+  2013.
+
+\bibitem[EAC{\etalchar{+}}23]{Emri2023}
+Z.~Emri, K.~Antal, G.~Csordás, C.~Prantner, and L.~Kis-Tóth.
+\newblock Advantages of eeg monitoring in education.
+\newblock In {\em Agria Media 2023}, pages 174--183, 2023.
+
+\bibitem[KSS{\etalchar{+}}25]{Kothe2025}
+C.~Kothe, S.~Y. Shirazi, T.~Stenner, D.~Medine, C.~Boulay, M.~I. Grivich,
+  F.~Artoni, T.~Mullen, A.~Delorme, and S.~Makeig.
+\newblock The lab streaming layer for synchronized multimodal recording.
+\newblock {\em Imaging Neuroscience}, 3:IMAG.a.136, 2025.
+
+\bibitem[LWZL22]{Liang2022}
+Z.~Liang, X.~Wang, J.~Zhao, and X.~Li.
+\newblock Comparative study of attention-related features on attention
+  monitoring systems with a single eeg channel.
+\newblock {\em Journal of Neuroscience Methods}, 382:109711, 2022.
+
+\bibitem[MMM16]{Marzbani2016}
+H.~Marzbani, H.~R. Marateb, and M.~Mansourian.
+\newblock Neurofeedback: A comprehensive review on system design, methodology
+  and clinical applications.
+\newblock {\em Basic and Clinical Neuroscience}, 7(2):143--158, 2016.
+
+\bibitem[NdS05]{Niedermeyer2005}
+E.~Niedermeyer and F.~Lopes da~Silva.
+\newblock {\em Electroencephalography: Basic Principles, Clinical Applications,
+  and Related Fields}.
+\newblock Lippincott Williams \& Wilkins, 5 edition, 2005.
+
+\bibitem[PBB95]{Pope1995}
+A.~T. Pope, E.~H. Bogart, and D.~S. Bartolome.
+\newblock Biocybernetic system evaluates indices of operator engagement in
+  automated task.
+\newblock {\em Biological Psychology}, 40(1--2):187--195, 1995.
+
+\bibitem[PKD{\etalchar{+}}17]{Poulsen2017}
+A.~T. Poulsen, S.~Kamronn, J.~Dmochowski, L.~C. Parra, and L.~K. Hansen.
+\newblock Eeg in the classroom: Synchronised neural recordings during video
+  presentation.
+\newblock {\em Scientific Reports}, 7:43916, 2017.
+
+\bibitem[WW12]{Wolpaw2012}
+J.~R. Wolpaw and E.~W. Wolpaw.
+\newblock {\em Brain-Computer Interfaces: Principles and Practice}.
+\newblock Oxford University Press, 2012.
+
+\bibitem[XZ18]{Xu2018}
+J.~Xu and B.~Zhong.
+\newblock Review on portable eeg technology in educational research.
+\newblock {\em Computers in Human Behavior}, 81:340--349, 2018.
+
+\end{thebibliography}

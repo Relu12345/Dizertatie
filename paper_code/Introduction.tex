@@ -1,0 +1,55 @@
+\chapter{Introduction}\label{cap:intro}
+Brain–Computer Interface (BCI) technologies have been developing really fast, and they now let us see what’s going on in the brain almost in real time. In classrooms, this could give us a better idea of how students pay attention, stay engaged, or handle mentally difficult tasks. Using neurofeedback, teachers could actually measure attention, notice when students get tired, and maybe even adjust their teaching on the spot to help everyone follow along better. In this thesis, I look at how a multi-user neurofeedback system could work in practice, collecting attention data from students during lessons and giving a way to make teaching a bit more personalized and based on real data, not just guesses.
+
+
+
+\section{Motivation}\label{sect:mot}
+Modern education has achieved significant advances, incorporating new teaching tools and pedagogical strategies. However, a persistent challenge remains: the limited individualization of instruction. Most classrooms still follow a “one-method-fits-all” approach, and research on student engagement often relies on group-level analysis rather than individual metrics. Neurofeedback offers a promising solution to this limitation, as it allows for continuous, individualized monitoring of attention and cognitive load during learning activities. By capturing real-time neural data, teachers and researchers can gain a better understanding of how each student interacts with course material and identify segments of instruction that are more or less engaging \cite{Apicella2022}.
+
+
+This approach not only supports individualized feedback but also informs the design of adaptive learning environments that maintain overall class cohesion. For example, electroencephalogram (EEG) based attention monitoring can reveal some patterns of disengagement that might usually go unnoticed, making it possible to have timely interventions such as content adjustment or brief focus exercises. Furthermore, neurofeedback provides value for students with special needs, such as those with dyslexia or other attention-related difficulties, giving educators a way to tailor tasks that are challenging to become more manageable for them.
+
+
+By integrating neurofeedback into classroom settings, this work aims to bridge the
+gap between broad educational strategies and individual cognitive profiles. The
+result is a data-informed foundation that supports more effective and responsive
+teaching while preserving a collective learning environment \cite{Marzbani2016}.
+
+\section{Research Objectives}\label{sect:robj}
+The main objective of this thesis is to explore whether a multi-user neurofeedback system can function reliably in a real classroom setting, using low-cost, single-electrode BCI headsets. The device range the project actually targets is this affordable, single-electrode kind, such as the NeuroSky MindWave, since the whole point is to keep a classroom deployment cheap. For this prototype, however, an 8-channel Unicorn headset was used, simply because that was the equipment already available at the university. The Unicorn is a more expensive, research-grade device, but for the purpose of this work the two are interchangeable: only a single channel and a single attention metric are needed, so the same setup would run just as well on the cheaper single-electrode hardware it is ultimately meant for. Since educational environments are unpredictable—students move, talk, shift attention, and produce a lot of noise—the first goal is simply to determine if attention signals can be captured, synchronized, and visualized in real time without requiring complex equipment or laboratory-grade conditions. This involves evaluating the stability of data transmission through the Lab Streaming Layer (LSL) protocol, the consistency of the attention metric provided by the headsets, and how well multiple devices can operate simultaneously on the same network.
+
+
+A second objective is to design and implement a software pipeline that enables teachers to observe attention patterns while a lesson is happening. The thesis aims to build an interface that updates dynamically and displays each student’s attention level in a way that is easy to interpret without requiring technical expertise. Another part of this objective is to allow lessons to be divided into labeled segments, so that the collected attention data can later be linked to specific topics or activities from the class. This makes the system useful not only in real time but also as a tool for reflecting on which parts of a lecture were more engaging or more difficult.
+
+
+Finally, this work aims to understand how such a system could fit practically into everyday teaching. The objective is not to decide whether neurofeedback improves learning or not, but to see how feasible it would be for teachers to use such technology without interrupting their way of working. This includes evaluating aspects like setup time, headset comfort, data clarity, and how easily they can interpret the visualizations.
+
+\section{Brain–Computer Interfaces Overview}\label{sect:bciov}
+BCI signal-processing pipelines generally follow a sequence of acquisition, preprocessing, feature extraction, and interpretation. This structure is well established in foundational BCI research, where data quality at the acquisition stage is strongly influenced by electrode placement, impedance control, amplifier characteristics, and sampling rate constraints \cite{Wolpaw2012}. In practical environments such as classrooms, hardware limitations—especially reduced channel counts and portability-focused designs—directly affect the spectral information available for later analysis.
+
+
+Preprocessing aims to reduce noise sources such as muscle contractions, eye movements, and environmental interference. Typical operations include band-pass filtering, notch filtering, and spatial transformations like the Common Average Reference. The effectiveness of these techniques becomes particularly important in non-laboratory settings, where movement and variability among users introduce additional noise.
+
+
+Feature extraction commonly relies on frequency-domain representations of neural activity. Well-documented relationships exist between oscillatory patterns and cognitive states: alpha rhythms are associated with fluctuating attentional demand, theta activity is linked to memory and task difficulty, and beta rhythms often reflect executive processes or sustained engagement \cite{Niedermeyer2005}.
+
+
+In multi-user setups, additional challenges arise, including the need for consistent timing across devices and maintaining stable data quality despite variations in headset placement and user behavior. While the underlying principles remain the same, scaling a system to multiple participants increases sensitivity to synchronization issues, hardware drift, and differences in electrode contact.
+
+\section{Educational Relevance}\label{sect:edurel}
+Understanding cognitive engagement in classrooms is a long-standing challenge in educational research. Traditional methods, such as observations or self-report questionnaires, provide only indirect or retrospective measures of student attention, which are often influenced by subjectivity and social desirability \cite{DMello2013}. Neurofeedback and EEG-based monitoring offer a complementary approach by capturing continuous, objective indicators of mental states in real time, enabling instructors to identify when students are attentive, fatigued, or cognitively overloaded.
+
+
+In addition to physiological approaches, intelligent tutoring systems have
+explored alternative methods for assessing student engagement and learning
+processes. Systems such as AutoTutor incorporate natural language interaction
+and user modeling to estimate both cognitive and affective states during learning
+activities. These approaches highlight the importance of continuously monitoring
+student responses and adapting instructional strategies accordingly, rather than
+relying solely on static or retrospective evaluation methods \cite{DMello2013}.
+
+
+Previous research has shown that neural activity correlates with attention and cognitive processing dynamics, supporting its use as an objective indicator of engagement. \cite{Dmochowski2014}.
+
+
+These approaches collectively highlight the growing importance of integrating objective, real-time measurements of cognitive states into educational environments, motivating the development of systems that can provide actionable insights for both instructors and learners.

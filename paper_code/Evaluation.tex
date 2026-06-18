@@ -1,0 +1,64 @@
+\chapter{Evaluation and Results}\label{cap:evalnress}
+To evaluate the prototype beyond confirming that the pipeline runs, it was used to deliver a complete lesson while recording engagement from 5 participants at the same time. The results presented in this chapter come directly from the report that the application produced for that session, so they reflect the behaviour of the system as it would actually be used in a classroom rather than a separate measurement made by hand.
+
+\section{Experimental Setup}\label{sect:expset}
+The participants were five volunteers who took part in a single session at the same time. They each received an information and consent form describing the purpose of the study, the type of data collected by the system, and how the collected data would be used. All participants provided written informed consent and voluntarily agreed to take part in the experiment. The recordings were collected solely for the purpose of evaluating the proposed system. To protect their privacy, the data is kept anonymous: the participants are referred to only as Subject~1 to Subject~5, and the stored report holds nothing beyond their engagement values and the slide timing, with no names or recordings attached.
+
+Each participant wore a Unicorn EEG headset connected to its own Raspberry Pi node, and every node published its stream to the teacher workstation over the local network. The workstation discovered the five streams, computed an engagement value for each one, and stored the results per slide.
+
+The lesson material was a regular eight-slide presentation taken from one of the courses taught at our faculty. The earlier slides were built mostly around text and theory, while the later ones relied more on images and worked examples. The same eight slides were shown to everyone at once and advanced by the teacher, so all subjects saw the same slide at the same moment.
+
+The session lasted a little over twenty minutes, with each slide kept on screen for a realistic length of time. Engagement was sampled about once per second for every subject throughout the lesson. As throughout the system, the engagement value is treated here as an indicator rather than a precise measurement, so the results below are read as trends and as differences between participants.
+
+\section{Engagement Results}\label{sect:engres}
+Across the whole session, the average engagement of the group was close to seventy percent. The report overview in Figure~\ref{fig:reports_overview} presents this together with the recorded duration and the number of slides that captured data, giving a quick summary of the session before the slide-level detail.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.92\textwidth]{\detokenize{En/8. Reports Overview.png}}
+\caption{Report overview summarising the recorded session, including overall engagement, slides with data, and presentation time.}
+\label{fig:reports_overview}
+\end{figure}
+
+The more useful view is engagement broken down by slide, which the application shows as a bar chart in Figure~\ref{fig:avg_per_slide}. Attention was high during the first part of the lesson and then fell once the material moved into the denser, more theoretical content in the second half. The first slides kept the group well engaged, while the later ones sat clearly lower, so the lesson divides naturally into an attentive opening and a weaker second half.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.92\textwidth]{\detokenize{En/9. Average Per Slide.png}}
+\caption{Average engagement per slide for the session, as shown on the report page.}
+\label{fig:avg_per_slide}
+\end{figure}
+
+This decline was a tendency across the whole group rather than the behaviour of a single person, but it was not the same for everyone. The per-student summary in Figure~\ref{fig:per_student} makes the differences clear, with most subjects staying reasonably engaged overall and one staying noticeably lower than the rest, due to a lack of interest in the final part of the lesson.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.92\textwidth]{\detokenize{En/10. Per-student Report.png}}
+\caption{Per-student summary for the session, showing the average, minimum, maximum, and sample count for each subject.}
+\label{fig:per_student}
+\end{figure}
+
+The first half of the lesson looked similar for all five subjects, with only short dips on the more text-heavy slides. The differences appear later on. The picture-based slides in the second half held attention better for the group than the most text-heavy slide did, but which of them worked best depended on the subject: each of the engaged participants stayed with at least one of the later slides while drifting on the others, just not always the same one. This is the kind of variation that would be expected when different students connect with different parts of the material. The slide drill-down on the report page shows it directly, with some subjects high, some around the middle, and one near the bottom on the same slide.
+
+Subject~1 stands apart from this pattern. This participant followed the group closely through the first half, then disengaged around the middle of the lesson and stayed low for the rest of it, without the partial recoveries the others showed on the later slides. The result is an overall engagement of roughly half that of the most attentive subjects. The drop in the second half is therefore something the whole group shared to some degree, with Subject~1 showing it in its strongest form.
+
+\section{System Performance and Stability}\label{sect:perfasses}
+The session ran without interruption for its full length. The five streams were discovered automatically, stayed connected throughout, and the dashboard kept updating while the slides were being presented, so lesson delivery and engagement monitoring took place in the same application at the same time. None of the streams went stale during the lesson, and the report was generated automatically when the presentation was stopped, with every slide containing data.
+
+Because engagement is computed independently for each stream, handling five participants at once did not change how the interface behaved, in line with its per-stream design. An ordinary workstation was enough to keep the display responsive in near real time for the whole session.
+
+The detailed inspection view was used during the session to confirm that each headset was sending a usable signal. It shows the recent raw EEG values for a selected stream over relative time, as in Figure~\ref{fig:raw_eeg_time}, which made it easy to tell a working stream from a flat or noisy one before relying on its engagement value.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.92\textwidth]{\detokenize{En/7. Raw EEG and time_sec.png}}
+\caption{Raw EEG inspection chart showing recent Fz values over relative time for a selected stream.}
+\label{fig:raw_eeg_time}
+\end{figure}
+
+\section{Educational Observations}\label{sect:usrfb}
+Running an actual lesson showed that the workflow holds together in practice. Preparing the material, presenting it, watching the live cards, and reviewing the report afterwards all happened in one place, without switching between separate tools. Presenting engagement as a supportive indicator rather than as a score also fits the educational purpose of the system, since the report encourages a teacher to ask why a slide or a participant lost attention instead of ranking anyone.
+
+The session also showed what this kind of feedback can add. On its own, the class average described a lesson that started strong and weakened in the second half. The per-subject view added the part that is harder to notice in a live classroom: that one slide softened attention for almost everyone, and that a single participant disengaged completely while the others recovered. Observations like these are the intended use of the system, supporting reflection on pacing and on individual participants once the lesson is over.
+
+These observations come with clear limits. This was a single session with five participants and one lesson, so the numbers describe this session and are not a general claim about classrooms. The engagement value also stays sensitive to movement, headset placement, and the other usual EEG artifacts, and it remains an indicator rather than a validated measurement. The smoothing and per-slide averaging are what keep the trends readable despite the noise, while the raw signal stays available for checking. A larger study, and a metric validated against an external reference, would be needed before drawing stronger conclusions.
